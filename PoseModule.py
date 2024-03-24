@@ -4,7 +4,7 @@ import time
 import math
 
 class poseDetector():
-    # All these arguments are for thr Pose() function which instantiates a Pose model instance
+    # All these arguments are for the Pose() function which instantiates a Pose model instance
     def __init__(self,mode = False,model_complexity=1, upBody = False,smooth = True,detectionCon=0.5,trackCon=0.5):
         self.mode = mode
         self.comp = model_complexity
@@ -31,13 +31,13 @@ class poseDetector():
         # returning the image with connected landmark points
         return img  
     
-    # convering all landmarks pts 5(given in some ratio ) to actual co-ordinates and storing them in lmlist , and redrawing these landmarks using new co-ords and coloring them differently   
+    # converting all landmarks pts (given in some ratio ) to actual co-ordinates and storing them in lmlist , and redrawing these landmarks using new co-ords and coloring them differently   
     def findPosition(self,img,draw=True):
         # storing all the 33 landmark points in lmlist
         self.lmlist=[]
         if self.results.pose_landmarks:
             for id,lm in enumerate(self.results.pose_landmarks.landmark):
-                h,w,c = img.shape
+                h,w,c= img.shape
                 # converting x,y ratios to actual values by multiplying it with ht. and wt. of image
                 cx,cy = int(lm.x*w),int(lm.y*h)
                 
@@ -61,7 +61,7 @@ class poseDetector():
             angle = angle+360
         if angle>180:
             angle = 360-angle
-        print (angle)
+        # print (angle)
         #Drawing
         if draw:
             cv2.line(img,(x1,y1),(x2,y2),(255,255,255),3)
@@ -73,6 +73,8 @@ class poseDetector():
             cv2.circle(img,(x3,y3),15,(255,0,0),2)
             cv2.circle(img,(x3,y3),10,(255,0,0),-1)
             cv2.putText(img,str(int(angle)),(x2-70,y2+50),cv2.FONT_HERSHEY_PLAIN,2,(0,0,255),2)
+            
+        return angle
  
 def main():
     cap = cv2.VideoCapture(0)

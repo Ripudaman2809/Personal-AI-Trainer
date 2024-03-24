@@ -1,9 +1,1 @@
-if draw:
-        #     cv2.line((x1,y1),(x2,y2),(255,255,255),3)
-        #     cv2.line((x3,y3),(x2,y2),(255,255,255),3)
-        #     cv2.circle(img,(x1,y1),15,(255,0,0),2)
-        #     cv2.circle(img,(x1,y1),10,(255,0,0),-1)
-        #     cv2.circle(img,(x2,y2),15,(255,0,0),2)
-        #     cv2.circle(img,(x2,y2),10,(255,0,0),-1)
-        #     cv2.circle(img,(x3,y3),15,(255,0,0),2)
-        #     cv2.circle(img,(x3,y3),10,(255,0,0),-1)
+print (angle)
