@@ -1,0 +1,6 @@
+[theme]
+primaryColor = "#4E342E"  # Dark Brown
+backgroundColor = "#EFEBE9"  # Pale Pink
+secondaryBackgroundColor = "#BCAAA4"  # Taupe
+textColor = "#3E2723"  # Dark Chocolate
+font = "sans serif"
